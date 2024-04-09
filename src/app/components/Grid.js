@@ -27,7 +27,7 @@ export default function Grid() {
 
   return (
     <div className="container mx-auto px-6 py-24 sm:py-32 lg:px-0">
-      <div className="grid grid-cols-1 gap-24 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-[clamp(1rem,2rem,6rem)] sm:grid-cols-2 lg:grid-cols-4">
         {cards && sites && cards.map((cardData, index) => {
           const slug = sites[index]?.slug;
           return (

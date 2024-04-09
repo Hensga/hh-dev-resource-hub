@@ -23,44 +23,49 @@ function ArrowIcon(props) {
 
 const textVariants = {
   hover: {
-    y: -37,
+    y: -30,
   },
 };
 
-export default function Card({ image, title, link}) {
-
- 
-
+export default function Card({ image, title, link }) {
   return (
     <motion.div whileHover="hover" className="">
-      <div className="bg-white rounded-2xl overflow-hidden">
-        <Image
-          className="w-full h-64 object-cover object-center"
-          src={image}
-          width={1000}
-          height={1000}
-          alt="blog"
-        />
-        <div className="p-4 flex flex-col h-40 justify-between">
-          <div className="h-10 overflow-hidden">
+      <div className="overflow-hidden relative">
+        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden">
+          <Image
+            className="rounded-2xl h-full w-full object-cover object-center"
+            src={image}
+            width={1000}
+            height={1000}
+            alt="blog"
+          />
+        </div>
+        <div className="py-4 flex flex-col h-28">
+          <div className="h-8 overflow-hidden">
             <motion.h2
               variants={textVariants}
-              className="text-3xl font-bold text-gray-800 relative after:absolute after:left-0 after:top-full after:content-[attr(data-letter)]"
+              className="text-xl font-bold text-gray-800 relative after:absolute after:left-0 after:top-full after:content-[attr(data-letter)]"
               data-letter={title}
             >
               {title}
-            </motion.h2>
+            </motion.h2>            
           </div>
           <div className="flex justify-between">
-            <p className="text-lg font-light text-gray-600 mt-2">Inspiration</p>
-            <a
+            <p className="text-lg font-light text-slate-600 mt-2">
+              Inspiration
+            </p>
+            {/* <a
               href={link}
               className="bg-[#B3B3B3] rounded-lg grid place-items-center px-1 py-1 hover:scale-105 hover:rotate-90 transition-transform duration-300 ease-in-out"
             >
-              <ArrowIcon className="m-1" />
-            </a>
+              <ArrowIcon className="m-1 w-4 h-4" />
+            </a> */}
           </div>
         </div>
+        <a
+          href={link}
+          className="absolute inset-0 z-10 "
+        ></a>
       </div>
     </motion.div>
   );
