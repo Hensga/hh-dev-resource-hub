@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { ButtonWithIcon } from "@/app/components/ButtonWithIcon";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function Page() {
   const pathname = usePathname();
@@ -66,7 +67,12 @@ export default function Page() {
                       </p>
                     </div>
                   </div>
-                  <ButtonWithIcon link={item.ressource} />
+                  <ButtonWithIcon
+                    IconComponent={SquareArrowOutUpRight}
+                    name="View Resource"
+                    className="my-8"
+                    link={item.ressource}
+                  />
                 </div>
               </div>
             </div>

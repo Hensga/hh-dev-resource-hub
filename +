@@ -3,18 +3,17 @@ import { SquareArrowOutUpRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-export function ButtonWithIcon({ link, className, name, IconComponent }) {
+export function ButtonWithIcon({ link }) {
   return (
-    <Button asChild className={className}>
+    <Button asChild className="my-4">
       {link ? (
         <Link href={link}>
-          {name}
-          <IconComponent className="h-4 w-4 ml-2" />
+          Button
+          <SquareArrowOutUpRight />
         </Link>
       ) : (
         <span className="flex items-center gap-2">
-          {name}
-          <IconComponent className="h-4 w-4" />
+          Button <SquareArrowOutUpRight />
         </span>
       )}
     </Button>
