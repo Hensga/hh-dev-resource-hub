@@ -5,6 +5,8 @@ import { GET_SITES } from "@/app/graphql/getSites";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
+import { ButtonWithIcon } from "@/app/components/ButtonWithIcon";
+
 export default function Page() {
   const pathname = usePathname();
   const [data, setData] = useState(null);
@@ -62,24 +64,9 @@ export default function Page() {
                         eget risus enim. Mattis mauris semper sed amet vitae sed
                         turpis id.
                       </p>
-                      <p className="mt-8">
-                        Et vitae blandit facilisi magna lacus commodo. Vitae
-                        sapien duis odio id et. Id blandit molestie auctor
-                        fermentum dignissim. Lacus diam tincidunt ac cursus in
-                        vel. Mauris varius vulputate et ultrices hac adipiscing
-                        egestas. Iaculis convallis ac tempor et ut. Ac lorem vel
-                        integer orci.
-                      </p>
-                      <p className="mt-8">
-                        Et vitae blandit facilisi magna lacus commodo. Vitae
-                        sapien duis odio id et. Id blandit molestie auctor
-                        fermentum dignissim. Lacus diam tincidunt ac cursus in
-                        vel. Mauris varius vulputate et ultrices hac adipiscing
-                        egestas. Iaculis convallis ac tempor et ut. Ac lorem vel
-                        integer orci.
-                      </p>
                     </div>
                   </div>
+                  <ButtonWithIcon link={item.ressource} />
                 </div>
               </div>
             </div>
