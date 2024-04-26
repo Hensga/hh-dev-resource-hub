@@ -47,7 +47,7 @@ export default function Page() {
                 <div>
                   <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
                     <p className="text-base font-semibold leading-7 text-indigo-600">
-                      Company values
+                      Hier sollte die Kategorie stehen
                     </p>
                     <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                       {item.title}
@@ -84,7 +84,9 @@ export default function Page() {
               </div>
             </div>
           </div>
-        ))) || <div className="container mx-auto py-24 sm:py-32">Loading...</div>}
+        ))) || (
+        <div className="container mx-auto py-24 sm:py-32">Loading...</div>
+      )}
     </>
   );
 }
