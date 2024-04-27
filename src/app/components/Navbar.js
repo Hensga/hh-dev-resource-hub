@@ -1,6 +1,4 @@
 import Logo from "@/app/components/Logo";
-import { ButtonWithIcon } from "@/app/components/ButtonWithIcon";
-import { Plus } from "lucide-react";
 
 export default function Navbar() {
   return (
