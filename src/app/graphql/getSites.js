@@ -17,7 +17,6 @@ export const GET_SITES = gql`
           }
           ... on Filter {
             title
-            }
           }
         }
       }

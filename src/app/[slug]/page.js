@@ -64,15 +64,7 @@ export default function Page() {
                       {item.title}
                     </h1>
                     <div className="max-w-xl">
-                      <p className="mt-6">
-                        Faucibus commodo massa rhoncus, volutpat. Dignissim sed
-                        eget risus enim. Mattis mauris semper sed amet vitae sed
-                        turpis id. Id dolor praesent donec est. Odio penatibus
-                        risus viverra tellus varius sit neque erat velit.
-                        Faucibus commodo massa rhoncus, volutpat. Dignissim sed
-                        eget risus enim. Mattis mauris semper sed amet vitae sed
-                        turpis id.
-                      </p>
+                      <p className="mt-6">{item.description}</p>
                     </div>
                   </div>
                   <ButtonWithIcon

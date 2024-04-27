@@ -38,14 +38,15 @@ export default function ImageWithTextAndHeading() {
             Just one link to remember to have all your resources in one place.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
+            src="/images/henning-huth.png"
             alt=""
             width={1344}
             height={1104}
             className="mt-16 aspect-[6/5] w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
+            priority
           />
           <span className="block mt-2 ml-6 text-sm text-slate-500">
-            Henning Huth
+            Thats actually me. Hi! 👋
           </span>
         </div>
         <div className="w-full lg:max-w-xl lg:flex-auto">

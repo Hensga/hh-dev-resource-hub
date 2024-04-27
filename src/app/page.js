@@ -20,19 +20,21 @@ export default function Home() {
         const { data } = await client.query({
           query: GET_FILTERS,
         });
-        // Deduplizierung der Filter
-        const filtersSet = new Set();
+        const filterCounts = {};
+        // Zählen der Vorkommen jedes Filters
         data.siteCollection.items.forEach((site) => {
-          if (site.filter && site.filter.title) {
-            filtersSet.add(site.filter.title);
-          }
+          const filterTitle = site.filter?.title || "All";
+          filterCounts[filterTitle] = (filterCounts[filterTitle] || 0) + 1;
         });
-        const uniqueFilters = Array.from(filtersSet).map((title) => ({
-          filter: { title },
-        }));
-        setData([{ filter: { title: "All" } }, ...uniqueFilters]);
+        const filterData = [
+          { filter: { title: "All", count: data.siteCollection.items.length } },
+        ];
+        for (const title in filterCounts) {
+          filterData.push({ filter: { title, count: filterCounts[title] } });
+        }
+        setData(filterData);
       } catch (error) {
-        console.error(error);
+        console.error("Error fetching filters:", error);
       }
     };
     fetchData();
@@ -55,6 +57,8 @@ export default function Home() {
                 key={index}
                 title={item.filter?.title || ""}
                 onClick={() => handleFilterClick(item.filter?.title)}
+                isActive={activeFilter === item.filter?.title}
+                count={item.filter?.count || 0}
               />
             ))}
         </ul>
