@@ -4,7 +4,7 @@ import client from "@/app/services/apollo-client";
 import { GET_CARDS } from "@/app/graphql/getCards";
 import { useEffect, useState } from "react";
 
-export default function Grid() {
+export default function Grid({ activeFilter }) {
   const [cards, setCards] = useState(null);
   const [sites, setSites] = useState(null);
 
@@ -23,22 +23,24 @@ export default function Grid() {
     fetchData();
   }, []);
 
-  
-
   return (
-    <div className="container mx-auto px-6 py-24 sm:py-32 lg:px-0">
+    <div className="container mx-auto px-6 pt-8 pb-24 sm:pb-32 xl:px-0">
       <div className="grid grid-cols-1 gap-[clamp(1rem,2rem,6rem)] sm:grid-cols-2 lg:grid-cols-4">
-        {cards && sites && cards.map((cardData, index) => {
-          const slug = sites[index]?.slug;
-          return (
-            <Card
-              key={index}
-              image={cardData.cardImage.url}
-              title={cardData.cardTitle}
-              link={`/${slug}`}
-            />
-          );
-        }) || "Loading..."}
+        {cards &&
+          cards.map((card, index) => {
+            const slug = sites[index]?.slug;
+            if (activeFilter !== "All" && card.filter?.title !== activeFilter) {
+              return null;
+            }
+            return (
+              <Card
+                key={index}
+                image={card.cardImage.url}
+                title={card.cardTitle}
+                link={`/${slug}`}
+              />
+            );
+          })}
       </div>
     </div>
   );

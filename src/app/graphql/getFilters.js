@@ -1,14 +1,10 @@
 import { gql } from "@apollo/client";
 
-export const GET_SITES = gql`
-  query GetSites($slug: String!) {
-    siteCollection(where: { slug: $slug }) {
+export const GET_FILTERS = gql`
+  query GetFilters {
+    siteCollection {
       items {
-        title
         slug
-        description
-        ressource
-        link
         filter {
           sys {
             id

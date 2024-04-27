@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SquareArrowOutUpRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 

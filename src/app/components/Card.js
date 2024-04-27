@@ -31,7 +31,7 @@ export default function Card({ image, title, link }) {
   return (
     <motion.div whileHover="hover" className="">
       <div className="overflow-hidden relative">
-        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden">
+        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden">
           <Image
             className="rounded-2xl h-full w-full object-cover object-center"
             src={image}
@@ -48,7 +48,7 @@ export default function Card({ image, title, link }) {
               data-letter={title}
             >
               {title}
-            </motion.h2>            
+            </motion.h2>
           </div>
           <div className="flex justify-between">
             <p className="text-lg font-light text-slate-600 mt-2">
@@ -62,10 +62,7 @@ export default function Card({ image, title, link }) {
             </a> */}
           </div>
         </div>
-        <a
-          href={link}
-          className="absolute inset-0 z-10 "
-        ></a>
+        <a href={link} className="absolute inset-0 z-10 "></a>
       </div>
     </motion.div>
   );

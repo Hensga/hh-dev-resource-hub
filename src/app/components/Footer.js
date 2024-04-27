@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <div className="bg-primary-black rounded-t-[40px]">
       <FooterSvg className="px-4 md:px-0 pt-24 pb sm:pt-24 sm:pb-16" />
-      <div className="flex flex-col md:flex-row container mx-auto items-center">
+      <div className="flex flex-col md:flex-row md:container mx-auto items-center">
         <div>
           <GetInTouchSvg />
         </div>
@@ -40,8 +40,28 @@ export default function Footer() {
                 </span>
               </Link>
             </li>
-            <li>Contact</li>
-            <li>Privacy</li>
+            <Link
+              className="flex group"
+              target="_blank"
+              href="https://www.henninghuth.dev/kontakt"
+            >
+              Contact{" "}
+              <span className="ml-2 overflow-hidden h-fit w-fit relative">
+                <ArrowIcon className="group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ" />
+                <ArrowIcon className="absolute top-0 group-hover:translate-x-0 duration-500 group-hover:translate-y-0 transition-all ease-in-out-circ translate-y-5 -translate-x-5" />
+              </span>
+            </Link>
+            <Link
+              className="flex group"
+              target="_blank"
+              href="https://www.henninghuth.dev/impressum"
+            >
+              Imprint{" "}
+              <span className="ml-2 overflow-hidden h-fit w-fit relative">
+                <ArrowIcon className="group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ" />
+                <ArrowIcon className="absolute top-0 group-hover:translate-x-0 duration-500 group-hover:translate-y-0 transition-all ease-in-out-circ translate-y-5 -translate-x-5" />
+              </span>
+            </Link>
           </ul>
         </div>
       </div>
