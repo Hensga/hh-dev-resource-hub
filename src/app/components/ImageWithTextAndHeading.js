@@ -31,7 +31,7 @@ export default function ImageWithTextAndHeading() {
           <p className="mt-6 text-xl leading-8 ">
             Discover a place where you can find the most important resources for
             your work in design and development, curated and organized just for
-            you. I decided to start this project to help both you and me.
+            you. I decided to start this project to help both you and me. :)
             I&apos;ve spent countless hours online finding cool tools and
             websites, only to lose track of them with laptop changes and browser
             profile switches. With this site, that won&apos;t happen anymore.
