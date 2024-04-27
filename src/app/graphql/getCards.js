@@ -5,17 +5,15 @@ export const GET_CARDS = gql`
     siteCollection {
       items {
         slug
+        sys {
+          id
+        }
         filter {
           sys {
             id
           }
           ... on Filter {
             title
-            category {
-              ... on Category {
-                title
-              }
-            }
           }
         }
       }
@@ -37,11 +35,6 @@ export const GET_CARDS = gql`
           }
           ... on Filter {
             title
-            category {
-              ... on Category {
-                title
-              }
-            }
           }
         }
       }

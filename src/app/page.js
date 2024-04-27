@@ -20,8 +20,17 @@ export default function Home() {
         const { data } = await client.query({
           query: GET_FILTERS,
         });
-        console.log("Data from GraphQL:", data);
-        setData([{ filter: { title: "All" } }, ...data.siteCollection.items]);
+        // Deduplizierung der Filter
+        const filtersSet = new Set();
+        data.siteCollection.items.forEach((site) => {
+          if (site.filter && site.filter.title) {
+            filtersSet.add(site.filter.title);
+          }
+        });
+        const uniqueFilters = Array.from(filtersSet).map((title) => ({
+          filter: { title },
+        }));
+        setData([{ filter: { title: "All" } }, ...uniqueFilters]);
       } catch (error) {
         console.error(error);
       }
@@ -38,7 +47,7 @@ export default function Home() {
       <HeroHeader />
       <Announcement />
       <Divider />
-      <div className="container mx-auto flex justify-center mt-10">
+      <div className="container mx-auto flex justify-center flex-wrap mt-10">
         <ul className="flex gap-4 text-lg text-gray font-mono">
           {data &&
             data.map((item, index) => (

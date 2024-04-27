@@ -11,11 +11,6 @@ export const GET_FILTERS = gql`
           }
           ... on Filter {
             title
-            category {
-              ... on Category {
-                title
-              }
-            }
           }
         }
       }

@@ -8,7 +8,7 @@ const textVariants = {
   },
 };
 
-export default function Card({ image, title, link }) {
+export default function Card({ image, title, link, filter }) {
   return (
     <motion.div whileHover="hover" className="">
       <div className="overflow-hidden relative">
@@ -25,16 +25,17 @@ export default function Card({ image, title, link }) {
           <div className="h-8 overflow-hidden">
             <motion.h2
               variants={textVariants}
-              className="text-xl font-bold text-gray-800 relative after:absolute after:left-0 after:top-full after:content-[attr(data-letter)]"
+              className="text-sm md:text-xl font-bold text-gray-800 relative md:after:absolute md:after:left-0 md:after:top-full md:after:content-[attr(data-letter)]"
               data-letter={title}
             >
               {title}
             </motion.h2>
           </div>
           <div className="flex justify-between">
-            <p className="text-lg font-light text-slate-600 mt-2">
-              Inspiration
-            </p>
+            <div className="flex items-center gap-2 text-xs md:text-lg text-slate-600 mt-2">
+              <div className="h-[6px] w-[6px] rounded-full bg-indigo-600"></div>
+              {filter}
+            </div>
             {/* <a
               href={link}
               className="bg-[#B3B3B3] rounded-lg grid place-items-center px-1 py-1 hover:scale-105 hover:rotate-90 transition-transform duration-300 ease-in-out"

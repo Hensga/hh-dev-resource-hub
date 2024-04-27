@@ -30,9 +30,9 @@ export default function Footer() {
           <GetInTouchSvg />
         </div>
         <div className="flex-1">
-          <ul className="text-4xl text-primary-white flex flex-col md:flex-row justify-center gap-4 py-8 md:py-0 md:gap-16">
+          <ul className="text-4xl text-primary-white flex flex-row flex-wrap justify-center gap-4 py-8 md:py-0 md:gap-16">
             <li className="">
-              <Link className="flex group" href="/about">
+              <Link className="flex group items-center" href="/about">
                 About{" "}
                 <span className="ml-2 overflow-hidden h-fit w-fit relative">
                   <ArrowIcon className="group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ" />
@@ -40,28 +40,32 @@ export default function Footer() {
                 </span>
               </Link>
             </li>
-            <Link
-              className="flex group"
-              target="_blank"
-              href="https://www.henninghuth.dev/kontakt"
-            >
-              Contact{" "}
-              <span className="ml-2 overflow-hidden h-fit w-fit relative">
-                <ArrowIcon className="group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ" />
-                <ArrowIcon className="absolute top-0 group-hover:translate-x-0 duration-500 group-hover:translate-y-0 transition-all ease-in-out-circ translate-y-5 -translate-x-5" />
-              </span>
-            </Link>
-            <Link
-              className="flex group"
-              target="_blank"
-              href="https://www.henninghuth.dev/impressum"
-            >
-              Imprint{" "}
-              <span className="ml-2 overflow-hidden h-fit w-fit relative">
-                <ArrowIcon className="group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ" />
-                <ArrowIcon className="absolute top-0 group-hover:translate-x-0 duration-500 group-hover:translate-y-0 transition-all ease-in-out-circ translate-y-5 -translate-x-5" />
-              </span>
-            </Link>
+            <li>
+              <Link
+                className="flex group items-center"
+                target="_blank"
+                href="https://www.henninghuth.dev/kontakt"
+              >
+                Contact{" "}
+                <span className="ml-2 overflow-hidden h-fit w-fit relative">
+                  <ArrowIcon className="group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ" />
+                  <ArrowIcon className="absolute top-0 group-hover:translate-x-0 duration-500 group-hover:translate-y-0 transition-all ease-in-out-circ translate-y-5 -translate-x-5" />
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="flex group items-center"
+                target="_blank"
+                href="https://www.henninghuth.dev/impressum"
+              >
+                Imprint{" "}
+                <span className="ml-2 overflow-hidden h-fit w-fit relative">
+                  <ArrowIcon className="group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ" />
+                  <ArrowIcon className="absolute top-0 group-hover:translate-x-0 duration-500 group-hover:translate-y-0 transition-all ease-in-out-circ translate-y-5 -translate-x-5" />
+                </span>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

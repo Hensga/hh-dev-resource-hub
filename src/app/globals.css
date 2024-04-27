@@ -88,3 +88,10 @@
   }
 }
 
+.svgHover path {
+  transition: fill 0.3s ease;
+}
+
+.svgHover:hover path {
+  fill: #ffd803;
+}

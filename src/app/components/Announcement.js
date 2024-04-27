@@ -1,6 +1,6 @@
 export default function Announcement() {
   return (
-    <div className="mx-auto pt-10 pb-20 sm:pt-16 sm:pb-28">
+    <div className="mx-auto px-[.5px] pt-10 pb-20 sm:pt-16 sm:pb-28">
       <svg
         className="w-[calc(100vw-1rem)] h-auto mx-auto"
         width="1217"

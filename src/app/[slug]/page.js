@@ -15,7 +15,6 @@ export default function Page() {
 
   useEffect(() => {
     const slug = pathname.split("/").pop();
-    console.log("Extracted Slug:", slug);
 
     const fetchData = async () => {
       try {
@@ -23,7 +22,6 @@ export default function Page() {
           query: GET_SITES,
           variables: { slug },
         });
-        console.log("Data from GraphQL:", data);
         setData(data.siteCollection.items);
       } catch (error) {
         console.error(error);
@@ -43,11 +41,12 @@ export default function Page() {
                   <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-[100%] shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
                     <Image
                       className="absolute inset-0 h-full w-full object-cover"
-                      src={item.link}
+                      src={item.image?.url}
                       alt={item.title}
                       width={1000}
                       height={1000}
                       lazy="eager"
+                      priority
                     />
                   </div>
                 </div>
