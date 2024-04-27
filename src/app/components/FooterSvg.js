@@ -1,6 +1,6 @@
 export default function FooterSvg({ className }) {
   return (
-    <div className="mx-auto md:container pt-10 pb-20 sm:pt-16 sm:pb-28">
+    <div className="mx-auto container pt-10 pb-20 sm:pt-16 sm:pb-28">
       <svg
         className={className + " w-full h-auto mx-auto"}
         width="1180"

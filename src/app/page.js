@@ -50,7 +50,7 @@ export default function Home() {
       <Announcement />
       <Divider />
       <div className="container mx-auto flex justify-center flex-wrap mt-10">
-        <ul className="flex gap-4 text-lg text-gray font-mono">
+        <ul className="flex gap-2 md:gap-4 text-lg text-gray font-mono">
           {data &&
             data.map((item, index) => (
               <Filter
