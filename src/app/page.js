@@ -49,8 +49,8 @@ export default function Home() {
       <HeroHeader />
       <Announcement />
       <Divider />
-      <div className="container mx-auto flex justify-center flex-wrap mt-10">
-        <ul className="flex gap-2 md:gap-4 text-lg text-gray font-mono">
+      <div className="container mx-auto flex justify-center mt-10">
+        <ul className="flex gap-2 md:gap-4 text-lg text-gray flex-wrap font-mono">
           {data &&
             data.map((item, index) => (
               <Filter

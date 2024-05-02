@@ -23,7 +23,7 @@ export default function Grid({ activeFilter }) {
 
   return (
     <div className="container mx-auto px-6 pt-8 pb-24 sm:pb-32 xl:px-0">
-      <div className="grid grid-cols-2 gap-[clamp(1rem,2rem,6rem)] sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-[clamp(1rem,2rem,6rem)] lg:grid-cols-3">
         {sites &&
           sites.map((site, index) => {
             if (activeFilter !== "All" && site.filter?.title !== activeFilter) {

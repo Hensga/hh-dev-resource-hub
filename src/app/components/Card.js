@@ -1,18 +1,21 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useMediaQuery } from "framer-motion";
 import Image from "next/image";
 
-const textVariants = {
-  hover: {
-    y: -30,
-  },
-};
+// const textVariants = {
+//   hover: {
+//     y: -30,
+//   },
+// };
 
 export default function Card({ image, title, link, filter }) {
   return (
-    <motion.div whileHover="hover" className="">
+    <motion.div
+      whileHover="hover"
+      className="group hover:scale-105 transition-all ease-in-out duration-300"
+    >
       <div className="overflow-hidden relative">
-        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden">
+        <div className="aspect-h-10 aspect-w-16 w-full overflow-hidden">
           <Image
             className="rounded-2xl h-full w-full object-cover object-center"
             src={image}
@@ -24,8 +27,8 @@ export default function Card({ image, title, link, filter }) {
         <div className="py-4 flex flex-col h-28">
           <div className="h-8 overflow-hidden">
             <motion.h2
-              variants={textVariants}
-              className="text-sm md:text-xl font-bold text-gray-800 relative md:after:absolute md:after:left-0 md:after:top-full md:after:content-[attr(data-letter)]"
+              // variants={textVariants}
+              className="md:text-xl font-bold text-gray-800 relative md:after:absolute md:after:left-0 md:after:top-full md:after:content-[attr(data-letter)]"
               data-letter={title}
             >
               {title}

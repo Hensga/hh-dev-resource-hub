@@ -12,7 +12,7 @@ import { SquareArrowOutUpRight } from "lucide-react";
 export default function Page() {
   const pathname = usePathname();
   const [data, setData] = useState(null);
-
+  const [jsonLd, setJsonLd] = useState({});
   useEffect(() => {
     const slug = pathname.split("/").pop();
 
@@ -23,6 +23,16 @@ export default function Page() {
           variables: { slug },
         });
         setData(data.siteCollection.items);
+        if (data.siteCollection.items.length > 0) {
+          const item = data.siteCollection.items[0];
+          setJsonLd({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: item.title,
+            image: item.image?.url,
+            description: item.description,
+          });
+        }
       } catch (error) {
         console.error(error);
       }
@@ -72,6 +82,7 @@ export default function Page() {
                     name="View Resource"
                     className="my-8"
                     link={item.ressource}
+                    target="_blank"
                   />
                 </div>
               </div>
@@ -82,6 +93,10 @@ export default function Page() {
           Loading...
         </div>
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 }
