@@ -1,6 +1,7 @@
 "use client";
 import { motion, useMediaQuery } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 // const textVariants = {
 //   hover: {
@@ -47,7 +48,11 @@ export default function Card({ image, title, link, filter }) {
             </a> */}
           </div>
         </div>
-        <a href={link} className="absolute inset-0 z-10 "></a>
+        <Link
+          href={link}
+          aria-label={title}
+          className="absolute inset-0 z-10 "
+        ></Link>
       </div>
     </motion.div>
   );

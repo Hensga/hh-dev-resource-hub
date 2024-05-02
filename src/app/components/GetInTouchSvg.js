@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function GetInTouchSvg() {
   return (
-    <Link href="mailto:hi@henninghuth.dev">
+    <Link aria-label="Write an Email" href="mailto:hi@henninghuth.dev">
       <svg
         className="svgHover"
         width="304"

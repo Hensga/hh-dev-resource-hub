@@ -11,7 +11,7 @@ export const Filter = ({ title, onClick, isActive, count }) => {
         ) : null}
         <div className="flex">
           <p>{title}</p>
-          <sup className="text-xs text-gray-400">({count})</sup>
+          <sup className="text-xs text-gray-600">({count})</sup>
         </div>
       </div>
     </li>

@@ -21,7 +21,7 @@ module.exports = {
         background: "#E8E8E3",
         "primary-black": "#181818",
         "primary-white": "#F7F7F7",
-        gray: "#B3B3B3",
+        gray: "#8f8f8f",
         "middle-gray": "#888684",
         "dark-gray": "#393632",
         border: "hsl(var(--border))",
@@ -84,4 +84,3 @@ module.exports = {
     require("@tailwindcss/aspect-ratio"),
   ],
 };
-
